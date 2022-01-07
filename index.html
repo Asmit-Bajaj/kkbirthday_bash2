@@ -1,0 +1,260 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        let idx = 1;
+        var interval_id;
+        var audio;
+        function play() {
+            audio = document.getElementById("audio");
+            audio.play();
+        }
+
+        function open_curtain() {
+            play();
+            var el = document.documentElement;
+            $("#curtain1").animate({ width: 20 }, 5000);
+            $("#curtain2").animate({ width: 20 }, 5000);
+            setTimeout(triger_photos, 7000);
+
+            $("#effect").height('100vh');
+            $("#curtain_btn").hide();
+
+            var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+
+            if (requestMethod) { // Native full screen.
+                requestMethod.call(el);
+            } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript !== null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+
+        }
+        function close_curtain() {
+            $("#curtain1").animate({ width: 200 }, 1000);
+            $("#curtain2").animate({ width: 191 }, 1000);
+        }
+
+        function triger_photos() {
+            document.getElementById("1").style.display = "";
+
+            interval_id = setInterval(change_photo, 5000);
+        }
+
+        function change_photo() {
+
+            if (idx != 20) {
+                document.getElementById(idx + "").style.display = "none";
+                idx = idx + 1;
+            }
+
+            if (idx == 20) {
+                clearInterval(interval_id);
+                document.getElementById(idx + "").style.display = "";   
+                return;
+            }
+
+            document.getElementById(idx + "").style.display = "";
+        }
+
+        function show_next(){
+            document.getElementById(idx + "").style.display = "none";
+            idx = idx+1;
+            
+            document.getElementById(idx + "").style.display = "";
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <div id="effect">
+        <div id="main_photo">
+            <div id="1" style="display:none;">
+                <div class="container">
+                    <h2>Happy Birthday To You</h2>
+                    <h2>May All Your Wishes Comes True</h2>
+                    <div class="cake c1">
+                        <div class="cream"></div>
+                        <div class="icing">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="cherries">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="cake c2">
+                        <div class="cream"></div>
+                        <div class="icing">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="cherries">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="cake c3">
+                        <div class="cream"></div>
+                        <div class="icing">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="cherries">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="https://image.freepik.com/free-vector/happy-birthday-background-with-pink-balloons_52683-34172.jpg"
+                id="2" style="display:none;">
+            <img id="3" src="image/1.jpg" style="display:none">
+            <img id="4" src="image/2.jpeg" style="display: none;">
+            <img id="5" src="image/3.jpg" style="display: none;">
+            <img src="image/4.jpg" id="6" style="display: none;">
+            <img src="image/6.jpg" id="7" style="display: none;">
+            <img src="image/7.jpg" id="8" style="display: none;">
+            <img src="image/8.jpg" id="9" style="display: none;">
+            <img src="image/9.jpg" id="10" style="display: none;">
+            <img src="image/11.jpg" id="11" style="display: none;">
+            <img src="image/12.jpg" id="12" style="display: none;">
+            <img src="image/13.jpg" id="13" style="display: none;">
+            <img src="image/14.jpeg" id="14" style="display: none;">
+            <img src="image/15.jpg" id="15" style="display: none;">
+            <img src="image/16.jpg" id="16" style="display: none;">
+            <img src="image/17.jpg" id="17" style="display: none;">
+            <img src="image/18.jpg" id="18" style="display: none;">
+            <img src="image/19.jpg" id="19" style="display: none;">
+            <!-- <div class="mainVideoDiv" style="display: none;" id="20">
+                <video controls>
+                    <source src="video/birthday_video.mp4" type="video/mp4">
+                </video>
+                <a class="btn" href="#" onclick="show_next();">Next -></a>
+            </div> -->
+            <div id="20" style="display: none;">
+                <div class="text-box">
+                    <div class="text-img">
+                        <img src="image/soumya.jpg" style="width:350px !important;height:100% !important;border-radius:10%;"/>
+                    </div>
+                    <div class="text-text">
+                        <h4 style="font-size: 24px;
+                        color: #314bc9;">Happiest birthday to you Rana 💃May your life be filled with<br>colors of rainbow 🌈 and the joy that you have spread in the<br>past come back to you this day.<br>Age hasn't been kind to you my friend 😂😂. Happy 21st🌼🌼.<br>Another adventure filled year awaits you.
+                        </h4>
+                    </div>
+                </div>
+
+                <a class="btn" href="#" onclick="show_next();">Next -></a>
+            </div>
+
+            <div id="21" style="display: none;">
+                <div class="text-box">
+                    <div class="text-img">
+                        <img src="image/kamakhaya.jpg" style="width:350px !important;height:100% !important;border-radius:10%;"/>
+                    </div>
+                    <div class="text-text">
+                        <h4 style="font-size: 24px;
+                        color: #314bc9;">Happy birthday to my sometimes crazy but always fabulous friend!<br>Having a fun gal pal who is always full of life like you means that there's never a dull moment when you're around.....<br>
+                        </h4>
+                    </div>
+                </div>
+
+                <a class="btn" href="#" onclick="show_next();">Next -></a>
+            </div>
+
+            <div id="22" style="display: none;">
+                <div class="text-box">
+                    <div class="text-img">
+                        <img src="image/nitin.jpg" style="width:350px !important;height:100% !important;border-radius:10%;"/>
+                    </div>
+                    <div class="text-text">
+                        <h4 style="font-size: 24px;
+                        color: #314bc9;">Baar baar ye din aaye, khushiyaan jindagi me har ak din aaye. <br>Happy birthday Kritika(samosi)😅 🎂🎉🎂🎉<br>
+                        </h4>
+                    </div>
+                </div>
+
+                <a class="btn" href="#" onclick="show_next();">Next -></a>
+            </div>
+
+            <div id="23" style="display: none;">
+                <div class="text-box">
+                    <div class="text-img">
+                        <img src="image/asmit.jpg" style="width:350px !important;height:100% !important;border-radius:10%;"/>
+                    </div>
+                    <div class="text-text">
+                        <h4 style="font-size: 24px;
+                        color: #314bc9;">Happy Birthday Kritika !!! 🎂🎂<br>May God bless you alot Aise hi hasti raho🤩🤩<br>Tumhari saari wishes puri ho aur tumhe life mein bohot saari success mille !!🎉🎉🥰<br>Tum jiyyo hazaro saal saal aur saal ke din ho infinite😃😃<br>Always Keep on smiling 😁Happy Birthday !!!🎉🎉🎉🤩🤩🤩
+                        </h4>
+                    </div>
+                </div>
+
+                <a class="btn" href="#" onclick="show_next();">Next -></a>
+            </div>
+
+            <div id="24" style="display: none;">
+                <div class="text-box">
+                    <div class="text-img">
+                        <img src="image/thankYou.jpg" style="width:350px !important;height:100% !important;border-radius:10%;"/>
+                    </div>
+                    <div class="text-text">
+                        <h4 style="font-size: 24px;
+                        color: #314bc9;">Wish You a veryy Happy Birthday!!<br>Thank You !!!!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="http://talkerscode.com/webtricks/demo/images/curtain1.jpg" id="curtain1">
+        <img src="http://talkerscode.com/webtricks/demo/images/curtain2.jpg" id="curtain2">
+    </div>
+
+    <!-- <div id="curtain_buttons"> -->
+    <input type="button" value="OPEN SURPRISE" id="curtain_btn" onclick="open_curtain();">
+    <!-- </div> -->
+
+    <audio id="audio" src="songs/mix_4m10s (audio-joiner.com).mp3" loop></audio>
+
+</body>
+
+</html>

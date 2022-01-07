@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+body
+{
+ text-align:center;
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ /* font-family:helvetica; */
+ font-family: 'Sacramento';
+ /* background-color:#F79F81; */
+}
+#main_photo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main_photo img{
+    border-radius: 50%;
+    margin-top:20px;
+    width:700px !important;
+    height:500px !important;
+}
+
+.mainVideoDiv{
+    margin-top:20px;
+    width:700px !important;
+    height:500px !important;
+}
+
+video{
+    border-radius: 20%;
+    width:100%;
+}
+
+.btn{
+    color:#234bdd;
+    float: right;
+    margin-top:10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.text-box{
+    /* border-radius: 10%;
+    border: 3px solid #df3cdf; */
+    margin-top:20px;
+    width:700px !important;
+    height:400px !important;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.text-img{
+    width:350px;
+}
+
+.text-img>img{
+    width: 350px !important;
+    height: 100%;
+    border-radius: 10%;
+}
+
+.text-text{
+    width:350px;
+}
+
+
+.text-box > h4{
+    /* line-height: 26px; */
+    font-size: 24px;
+    color: #314bc9;
+}
+
+#effect
+{
+ /* background-color:#610B0B; */
+ background: url('https://st.depositphotos.com/1488517/3060/v/950/depositphotos_30607575-stock-illustration-sweet-birthday-background.jpg');
+ /* background-size: cover; */
+ /* background-position: right; */
+ background-size: 100% 100%;
+ background-repeat: no-repeat;
+
+ position:relative;	
+ width: 100%;
+ height: 86vh;
+ box-shadow:0px 0px 10px 0px #610B0B;
+}
+#effect p
+{
+ margin-top:10px;
+ font-size:30px;
+ color:#F79F81;
+}
+#curtain1
+{
+ top:0px;
+ position:absolute;
+ left:0px;
+ height:100%;
+ width:50%;
+}
+#curtain2
+{
+ top:0px;
+ position:absolute;
+ height:100%;
+ width:50%;
+ right:0px;
+}
+#curtain_btn
+{
+ margin-top:20px;
+ width:150px;
+ height:45px;
+ border-radius:2px;
+ color:white;
+ background-color:#B43104;
+ border:none;
+ border-bottom:6px solid #8A2908;
+}
+
+/* css for cake */
+
+.container{
+    background-color:#540765;
+    height:400px;
+    width: 300px;
+    border:2px solid white;
+    position: absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.container h2{
+    color:white;
+}
+
+.cake{
+    height:70px;
+    width:180px;
+    background-color: #fcf18e;
+    position:absolute;
+
+}
+
+.c1{
+    bottom:0;
+    left:60px;
+}
+
+.cream{
+    background-color: #fa406b;
+    height:10px;
+    width:180px;
+    position:absolute;
+    top:30px;
+}
+
+.icing{
+    position: relative;
+}
+
+.icing > div{
+    background-color: #fbd028;
+    height:12.5px;
+    width:26px;
+    border-radius: 0 0 26px 26px;
+    position:absolute;
+}
+
+.icing>div:nth-child(1){
+    left:-2px;
+}
+
+.icing>div:nth-child(2){
+    left:26px;
+}
+
+.icing>div:nth-child(3){
+    left:52px;
+}
+
+.icing>div:nth-child(4){
+    left:78px;
+}
+
+.icing>div:nth-child(5){
+    left:104px;
+}
+
+.icing>div:nth-child(6){
+    left:130px;
+}
+
+.icing>div:nth-child(7){
+    left:156px;
+}
+
+.cherries>div{
+    background-color: #f7174c;
+    height:18px;
+    width:18px;
+    border-radius: 50%;
+    position:absolute;
+    top:-18px;
+
+}
+
+.cherries>div:nth-child(1){
+    left:8px;
+}
+
+.cherries>div:nth-child(2){
+    left:40px;
+}
+
+.cherries>div:nth-child(3){
+    left:70px;
+}
+
+.cherries>div:nth-child(4){
+    left:100px;
+}
+
+.cherries>div:nth-child(5){
+    left:130px;
+}
+
+.cherries>div:nth-child(6){
+    left:156px;
+}
+
+.c2{
+    transform: scale(0.8);
+    bottom:62px;
+    left:60px;
+}
+
+.c3{
+    transform: scale(0.6);
+    bottom:110px;
+    left:60px;
+}
+
+.candle{
+    background-color: #f8f8f8;
+    height:70px;
+    width:20px;
+    position:absolute;
+    bottom:60px;
+    left:80px;
+}
+
+.flame{
+    background-color: #fbb200;
+    height:22px;
+    width:22px;
+    border-radius: 0 50% 50% 50%;
+    position:absolute;
+    top:-22px;
+    transform: rotate(45deg);
+
+}
